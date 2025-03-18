@@ -10,7 +10,7 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v3
       - name: Build de l'image Docker
-        run: docker build -t mon-app:latest .
+        run: cd app && docker build -t mon-app:latest .
       - name: Scan de l'image avec Trivy
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
